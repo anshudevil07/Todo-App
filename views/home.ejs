@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>
+        <%= title %>
+    </title>
+    <link rel="stylesheet" href="/css/home.css">
+</head>
+
+<body>
+    <div class="bigg">
+
+
+        <h1>TODO List App</h1>
+
+        <form action="/create-task" method="POST">
+            <div id="insideForm">
+
+                <input type="text" name="taskDescription" placeholder="Enter Task:" id="taskDes">
+                <div class="second">
+
+
+                    <input type="date" name="dueDate" placeholder="Due Date:" id="dueD">
+
+                    <div id="category-holder">
+
+
+
+                        <label for="cate"> <p>Category</p> </label>
+                        <select name="category" id="cate">
+                            <option value="school">School</option>
+                            <option value="college">College</option>
+                            <option value="study">Study</option>
+                            <option value="work">Work</option>
+                            <option value="personal">Personal</option>
+                            <option value="exercise">Exercise</option>
+
+                        </select>
+                    </div>
+                </div>
+                <button type="submit" id="adderbtn" class="bt">Add Task</button>
+            </div>
+        </form>
+
+        <form id="taskdeleter">
+            <ul class="uList">
+                <% for(let i of current_tasks){ %>
+                    <li class="item">
+                        <div class="grp1">
+                            <% let id=i._id %>
+
+                                <% if(i.completionStatus) { %>
+                                    <input type="checkbox" name="tasks" id="<%- id %>" class="checke" checked>
+                                    <% } %>
+                                        <% if(!i.completionStatus){%>
+                                            <input type="checkbox" name="tasks" id="<%- id %>" class="checke">
+                                            <% } %>
+                                                <label for="<%- id %>">
+                                                    <div class="task">
+                                                        <p class="task-description">
+                                                            <%= i.taskDescription%>
+                                                        </p>
+                                                        <div class="dueDate">
+                                                            <p>
+                                                                <small>
+                                                                    <% let newD=i.dueDate.toLocaleDateString('en-us', {
+                                                                        weekday:"long", year:"numeric", month:"short",
+                                                                        day:"numeric"}) %>
+
+                                                                        <%=newD%>
+                                                                </small>
+                                                            </p>
+                                                        </div>
+                                                    </div>
+                                                </label>
+                        </div>
+
+                        <div class="grp2">
+                            <div class="type">
+                                <p>
+                                    <%= i.category %>
+                                </p>
+                            </div>
+                        </div>
+                    </li>
+
+                    <%} %>
+            </ul>
+
+
+            <button type="submit" class="update bt" id="updater">Update</button>
+            <button type="submit" class="delete bt" id="deleter">Delete</button>
+        </form>
+
+
+    </div>
+
+    <script src="https://kit.fontawesome.com/8c59b3954d.js" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.4.js"
+        integrity="sha256-a9jBBRygX1Bh5lt8GZjXDzyOB+bWve9EiO7tROUtj/E=" crossorigin="anonymous"></script>
+    <script src="/js/taskdeleter.js"></script>
+
+
+</body>
+
+</html>

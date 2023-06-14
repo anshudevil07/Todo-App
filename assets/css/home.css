@@ -1,0 +1,221 @@
+.bigg {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.item {
+  display: flex;
+  width: 600px;
+  justify-content: space-between;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  min-height: 80px;
+}
+.uList {
+  list-style-type: none;
+  text-align: center;
+  list-style-type: none;
+  text-align: center;
+  display: flex;
+  /* justify-content: center; */
+  flex-direction: column;
+  align-items: center;
+}
+
+.grp1 {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 80%;
+}
+.completed {
+  margin-right: 30px;
+}
+
+.task {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 430px;
+}
+
+.task-description {
+  font-size: 1.1rem;
+  margin-bottom: 3px;
+  color: rgb(106, 114, 114);
+  font-weight: 500;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.dueDate p {
+  margin-top: 1px;
+  color: rgb(148, 165, 167);
+  font-weight: 500;
+  font-size: 1rem;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* For Type of task */
+
+.grp2 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.type {
+  font-size: 1rem;
+  font-family: Arial, Helvetica, sans-serif;
+  color: white;
+  font-weight: 520;
+  background-color: rgb(51, 101, 101);
+  width: 100px;
+  height: 2.5rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 3px;
+}
+
+/* Designing the checkbox  */
+
+input[type="checkbox"]:checked + label {
+  /* CSS styles for checked label text */
+  color: rgb(153, 158, 156);
+  text-decoration: line-through;
+}
+
+input[type="checkbox"] {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  border: 2px solid #555;
+  width: 20px !important;
+  height: 20px !important;
+  outline: none;
+  transition: border-color 0.3s;
+  box-sizing: border-box;
+  border-radius: 3px;
+  margin-right: 16px;
+}
+
+input[type="checkbox"]:checked {
+  border-color: rgb(60, 63, 60);
+  background-color: rgb(51, 101, 101);
+  border: -5px;
+  border-radius: 3px;
+}
+
+input[type="checkbox"]:checked:after {
+  content: "\2713";
+  color: #6cbf84;
+  font-size: 18px;
+  position: absolute;
+  top: 0;
+  left: 3px;
+}
+
+/* Designing the form */
+
+h1 {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 3rem;
+  color: rgb(51, 101, 101);
+}
+
+#taskDes {
+  width: 600px;
+  height: 60px;
+  border-top: 2px solid gray;
+  border-bottom: 2px solid gray;
+  border-left: 0;
+  border-right: 0;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  font-size: 1.2rem;
+  color: #555;
+  font-weight: 500;
+}
+
+.second {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 600px;
+  height: 60px;
+}
+
+#dueD {
+  width: 300px;
+  height: 60px;
+  border-top: 0px;
+  border-bottom: 2px solid gray;
+  border-left: 0;
+  border-right: 2px solid gray;
+  font-size: 1.1rem;
+  padding: 10px;
+  box-sizing: border-box;
+  color: #555;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#insideForm {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+#category-holder {
+  width: 300px;
+  border-bottom: 2px solid gray;
+  height: 60px;
+  box-sizing: border-box;
+  padding: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+}
+
+#category-holder p {
+  color: #555;
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+
+#cate {
+  width: 180px;
+  border: 0;
+  border-bottom: 2px solid gray;
+  height: 40px;
+}
+
+.bt {
+  margin-top: 15px;
+  /* background-color: #4CAF50;  */
+  color: white; /* White text color */
+  border: none; /* Remove button border */
+  padding: 12px 24px; /* Add padding to button */
+  font-size: 16px; /* Set font size */
+  cursor: pointer; /* Add cursor on hover */
+  border-radius: 4px; /* Add rounded corners */
+  box-sizing: border-box;
+  transition: background-color 0.3s; /* Add transition effect */
+}
+
+/* Change background color on hover */
+.bt:hover {
+  background-color: #3e8e41;
+}
+
+#adderbtn {
+  background-color: rgb(51, 101, 101);
+}
+
+#deleter {
+  background-color: red;
+}
+#updater {
+  background-color: rgb(51, 101, 101);
+}
